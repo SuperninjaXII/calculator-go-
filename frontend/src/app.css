@@ -1,3 +1,8 @@
+@font-face {
+    font-family: our;
+    src: url(./DMSerifText-Regular.ttf);
+}
+
 :root {
     --bg: #FFFFFF;
     --tertiary: #E6E8E6;
@@ -11,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     background: var(--bg);
+    font-family: our;
 }
 
 header {
@@ -21,7 +27,7 @@ header {
 .screen {
     width: 100svw;
     height: 26svh;
-    background: var(--tertiary);
+    background: var(--bg);
 }
 
 .screen div {
@@ -106,7 +112,7 @@ main {
     color: var(--tertiary);
 }
 
-.operators:hover {
+.operators .equal:hover {
     background: var(--bg);
     color: var(--accent);
 }
