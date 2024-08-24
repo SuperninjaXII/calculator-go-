@@ -1,0 +1,98 @@
+:root {
+    --bg: #FFFFFF;
+    --tertiary: #E6E8E6;
+    --complementary: #CED0CE;
+    --accent: #F15025;
+    --secodary: #191919;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    width: 100svw;
+    height: 26svh;
+    background: var(--tertiary);
+}
+
+.screen div {
+    width: 99svw;
+    height: 15svh;
+}
+
+main {
+    --keyboard-width: 100svw;
+    --keyboard-height: 70svh;
+    --square-width: 25svw;
+    --square-height: calc(var(--keyboard-height)/4.7);
+    display: flex;
+    flex-direction: row;
+    min-width: var(--keyboard-width);
+    max-height: var(--keyboard-height);
+}
+
+.utilities-number-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(var(--keyboard-width)- var(--square-width));
+}
+
+.utilities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(var(--keyboard-width) - var(--square-width));
+    height: var(--square-height);
+}
+
+.utilities button {
+    width: var(--square-width);
+    height: var(--square-height);
+    font-size: 2.9rem;
+    color: var(--accent);
+    border: none;
+    margin: 0;
+    background: var(--secodary);
+}
+
+.utilities #clear {
+    color: var(--tertiary);
+}
+
+.numbers-container {
+    display: flex;
+    width: calc(var(--keyboard-width) - var(--square-width));
+    flex-wrap: wrap;
+}
+
+.numbers-container .number {
+    width: var(--square-width);
+    height: var(--square-height);
+    background: var(--complementary);
+    border: none;
+    color: var(--secodary);
+    font-size: 2.4rem;
+
+}
+
+.number:hover {
+    background: var(--tertiary);
+}
+
+.operators button {
+    background: var(--secodary);
+    color: var(--accent);
+    border: none;
+    font-size: 2.2rem;
+    width: var(--square-width);
+    height: var(--square-height);
+}
