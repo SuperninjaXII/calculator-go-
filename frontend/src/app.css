@@ -27,6 +27,11 @@ header {
 .screen div {
     width: 99svw;
     height: 15svh;
+    font-size: 2.1rem;
+}
+
+.results {
+    text-align: right;
 }
 
 main {
@@ -95,4 +100,13 @@ main {
     font-size: 2.2rem;
     width: var(--square-width);
     height: var(--square-height);
+}
+
+.operators button:focus {
+    background: var(--complementary);
+}
+
+.operators .equal {
+    background: var(--accent);
+    color: var(--tertiary);
 }
