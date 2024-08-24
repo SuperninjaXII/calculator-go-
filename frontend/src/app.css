@@ -69,6 +69,7 @@ main {
     background: var(--secodary);
 }
 
+
 .utilities #clear {
     color: var(--tertiary);
 }
@@ -89,9 +90,6 @@ main {
 
 }
 
-.number:hover {
-    background: var(--tertiary);
-}
 
 .operators button {
     background: var(--secodary);
@@ -102,11 +100,46 @@ main {
     height: var(--square-height);
 }
 
-.operators button:focus {
-    background: var(--complementary);
-}
 
 .operators .equal {
     background: var(--accent);
     color: var(--tertiary);
 }
+
+.operators:hover {
+    background: var(--bg);
+    color: var(--accent);
+}
+
+button {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+button:hover {
+    background: var(--complementary) radial-gradient(circle, transparent 1%, var(--accent) 1%) center/15000%;
+}
+
+button:active {
+    background-color: var(--tertiary);
+    background-size: 100%;
+    transition: background 0s;
+}
+
+/* Button style */
+.number {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+.number:hover {
+    background: var(--complementary) radial-gradient(circle, transparent 1%, var(--accent) 1%) center/15000%;
+}
+
+.number:active {
+    background-color: var(--tertiary);
+    background-size: 100%;
+    transition: background 0s;
+}
+
+/* Button style */
