@@ -1,0 +1,94 @@
+:root {
+    --bg: #FFFFFF;
+    --tertiary: #E6E8E6;
+    --complementary: #CED0CE;
+    --accent: #F15025;
+    --secodary: #191919;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    max-height: 31svh;
+}
+
+.screen {
+    width: 99svw;
+    height: 27svh;
+    background: var(--tertiary);
+}
+
+.screen div {
+    width: 99svw;
+    height: 15svh;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    max-height: 69svh;
+}
+
+.utilities-number-container {
+    display: flex;
+    flex-direction: column;
+    width: 86svw;
+}
+
+.utilities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 88svw;
+    height: 16svh;
+}
+
+.utilities button {
+    width: 28.7svw;
+    height: 16svh;
+    font-size: 2.9rem;
+    color: var(--accent);
+    border: none;
+    margin: 0;
+    background: var(--secodary);
+}
+
+.utilities #clear {
+    color: var(--tertiary);
+}
+
+.numbers-container {
+    display: flex;
+    width: 90svw;
+    flex-wrap: wrap;
+}
+
+.numbers-container .number {
+    width: 29svw;
+    height: 14svh;
+    background: var(--complementary);
+    border: none;
+    color: var(--secodary);
+    font-size: 2.4rem;
+
+}
+
+.number:hover {
+    background: var(--tertiary);
+}
+
+.operators button {
+    background: var(--secodary);
+    color: var(--accent);
+    border: none;
+    font-size: 2.2rem;
+    width: 13svw;
+    height: 14.43svh;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>calculator-go</title>
+    <link rel="stylesheet" href="src/app.css">
+</head>
+
+<body>
+    <header>
+        <div class="screen">
+            <div class="operation-display">
+
+            </div>
+            <div class="results"></div>
+        </div>
+    </header>
+    <main>
+        <section class="utilities-number-container">
+
+            <div class="utilities">
+                <button id="clear" class="utility">C</button>
+                <button class="utility">del</button>
+                <button class="utility">%</button>
+            </div>
+
+            <div class="numbers-container">
+                <button value="1" class="number">
+                    1
+                </button>
+
+                <button value="2" class="number">
+                    2
+                </button>
+                <button value="3" class="number">
+                    3
+                </button>
+                <button value="4" class="number">
+                    4
+                </button>
+                <button value="5" class="number">
+                    5
+                </button>
+                <button value="6" class="number">
+                    6
+                </button>
+                <button value="7" class="number">
+                    7
+                </button>
+                <button value="8" class="number">
+                    8
+                </button>
+                <button value="9" class="number">
+                    9
+                </button>
+
+                <button value="0" class="number">
+                    0
+                </button>
+                <button value="." class="number">
+                    .
+                </button>
+                <button class="number">
+                    s
+                </button>
+            </div>
+        </section>
+
+        <section class="operators">
+            <button value="+" class="operator">+</button>
+            <button value="-" class="operator">-</button>
+            <button value="*" class="operator">*</button>
+            <button value="/" class="operator">/</button>
+            <button class="equal">=</button>
+        </section>
+    </main>
+    <script src="./src/main.js" type="module"></script>
+</body>
+
+</html>
