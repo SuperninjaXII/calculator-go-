@@ -44,7 +44,7 @@ main {
     --keyboard-width: 100svw;
     --keyboard-height: 70svh;
     --square-width: 25svw;
-    --square-height: calc(var(--keyboard-height)/4.7);
+    --square-height: calc(var(--keyboard-height)/5);
     display: flex;
     flex-direction: row;
     min-width: var(--keyboard-width);
@@ -68,7 +68,7 @@ main {
 .utilities button {
     width: var(--square-width);
     height: var(--square-height);
-    font-size: 2.9rem;
+    font-size: 2.4rem;
     color: var(--accent);
     border: none;
     margin: 0;
