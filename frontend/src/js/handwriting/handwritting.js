@@ -16,3 +16,15 @@ editor.initialize();
 document.querySelector("#convert").addEventListener("click", () => {
   editor.convert()
 })
+
+document.querySelector("#clearCanvas").addEventListener("click", async () => {
+  editor.clear();
+});
+
+document.querySelector("#undo").addEventListener("click", () => {
+  editor.undo();
+});
+
+document.querySelector("#redo").addEventListener("click", () => {
+  editor.redo();
+});

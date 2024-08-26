@@ -12,21 +12,63 @@
     <style>
         #editor {
             width: 100svw;
-            height: 70svh;
+            height: 90svh;
+        }
+
+        .hand-buttons {
+            display: flex;
+
+        }
+
+        .hand-button {
+            list-style: none;
+            width: auto;
+            height: 4svh;
+            padding-left: .71em;
+            padding-right: .71em;
+            padding-top: .5em;
+            padding-bottom: .5em;
+            margin: auto;
+            border: none;
+            border-radius: 1em;
+            font-size: 1.3em;
+            background: whitesmoke;
+        }
+
+        .hand-button:active {
+            background: black;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
     <header>
+
+        <div id="editor" class="hide" touch-action="none"></div>
         <div class="screen">
-            <div id="editor" class="hide" touch-action="none"></div>
             <div class="operation-display">
             </div>
             <div class="results"></div>
-            <button id="convert">Calculate</button>
-        </div>
     </header>
+
+
+    <nav class="hand-buttons hide">
+        <div class="dropdown ">
+            <button id="secondSuper" class="dropbtn hide"><img src="src/imgs/calculator.png" alt="calculate"
+                    class="icon" /></button>
+            <div class="dropdown-content">
+                <a id="simpleSwitch">simple</a>
+            </div>
+        </div>
+        <li class="hand-button hide" id="convert">Calculate</li>
+        <div class="drawing-helper-btns">
+            <li class="hand-button hide" id="clearCanvas"><img src="src/imgs/eraser.png" alt="clear" class="icon"></li>
+            <li class="hand-button hide" id="undo"><img src="src/imgs/undo.png" class="icon" alt="undo"></li>
+            <li class="hand-button hide" id="redo"><img src="src/imgs/redo.png" class="icon" alt="redo"></li>
+
+        </div>
+    </nav>
     <main>
         <section class="utilities-number-container">
 
@@ -66,14 +108,14 @@
                     9
                 </button>
 
+                <button id="super" class="number">
+                    <img src="src/imgs/calculator.png" alt="calculator" class="icon">
+                </button>
                 <button value="0" class="number">
                     0
                 </button>
                 <button value="." class="number">
                     .
-                </button>
-                <button id="super" class="number">
-                    s
                 </button>
             </div>
         </section>

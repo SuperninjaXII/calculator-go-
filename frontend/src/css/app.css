@@ -11,6 +11,10 @@
     --secodary: #191919;
 }
 
+.hide {
+    display: none;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -43,9 +47,6 @@ header {
     flex-direction: column;
 }
 
-canvas {
-    display: none;
-}
 
 .results {
     text-align: right;
@@ -55,7 +56,7 @@ main {
     --keyboard-width: 100svw;
     --keyboard-height: 70svh;
     --square-width: 25svw;
-    --square-height: calc(var(--keyboard-height)/5);
+    --square-height: calc(var(--keyboard-height)/4.6);
     display: flex;
     flex-direction: row;
     min-width: var(--keyboard-width);

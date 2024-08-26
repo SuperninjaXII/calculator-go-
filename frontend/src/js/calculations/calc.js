@@ -117,13 +117,48 @@ document.querySelector('.equal').addEventListener('click', performCalculation);
 
 // Event listener for the delete button
 document.querySelector('#delete').addEventListener('click', deleteCharacter);
-document.querySelector('#super').addEventListener('click', () => {
-  let keypad = document.querySelector("main");
-  keypad.classList.toggle("hide")
-  let screen = document.querySelector(".screen");
-  let cvs = document.querySelector("#editor")
-  screen.style.maxHeight = "100svh"
-  operationDisplay.style.height = `${(100 - (25 / 2))}svh`
-  cvs.style.display = "block"
-  operationDisplay.style.display = "none"
-})
+
+let mode = "simple";
+
+const SwitchMode = () => {
+  console.log("switv")
+  if (mode === 'simple') {
+    // Switch to 'hand-note' mode
+    mode = "hand-note";
+
+    let SecondSuperBtn = document.querySelector("#secondSuper");
+    let keypad = document.querySelector("main");
+    let screen = document.querySelector(".screen");
+    let cvs = document.querySelector("#editor");
+    let cvsButtons = document.querySelector(".hand-buttons");
+    // Toggle visibility of elements
+    keypad.classList.toggle("hide");
+    document.querySelectorAll('li').forEach(button => button.classList.toggle("hide"));
+    cvs.style.display = "block";
+    screen.classList.toggle("hide")
+    cvsButtons.classList.toggle("hide");
+    SecondSuperBtn.classList.toggle("hide");
+  } else {
+    // Switch back to 'simple' mode
+    mode = "simple";
+
+    let SecondSuperBtn = document.querySelector("#secondSuper");
+    let keypad = document.querySelector("main");
+    let screen = document.querySelector(".screen");
+    let cvs = document.querySelector("#editor");
+    let cvsButtons = document.querySelector(".hand-buttons");
+
+    // Revert visibility of elements
+    keypad.classList.toggle("hide");
+    document.querySelectorAll('li').forEach(button => button.classList.toggle("hide"));
+    screen.classList.toggle("hide");  // Reset maxHeight to default
+
+    cvs.style.display = "none";
+    cvsButtons.classList.toggle("hide");
+    SecondSuperBtn.classList.toggle("hide");
+  }
+};
+document.querySelector('#super').addEventListener("click", SwitchMode)
+
+document.querySelector('#secondSuper').addEventListener("click", SwitchMode)
+
