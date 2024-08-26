@@ -8,16 +8,23 @@
     <title>calculator-go</title>
     <link rel="stylesheet" href="src/css/app.css">
     <link rel="stylesheet" href="src/css/style.css">
+    <script src="node_modules/iink-ts/dist/iink.min.js"></script>
+    <style>
+        #editor {
+            width: 100svw;
+            height: 70svh;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="screen">
-            <button id="clear">clear</button>
-            <canvas id="drawingCanvas" width='350' height="600"></canvas>
+            <div id="editor" class="hide" touch-action="none"></div>
             <div class="operation-display">
             </div>
             <div class="results"></div>
+            <button id="convert">Calculate</button>
         </div>
     </header>
     <main>
@@ -85,7 +92,7 @@
 
     </script>
     <script src="./src/js/calculations/calc.js" type="module"></script>
-    <script type="module" src="src/js/handwriting/displayHandwritting.js">
+    <script type="module" src="src/js/handwriting/handwritting.js">
 
     </script>
 </body>

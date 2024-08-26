@@ -121,7 +121,7 @@ document.querySelector('#super').addEventListener('click', () => {
   let keypad = document.querySelector("main");
   keypad.classList.toggle("hide")
   let screen = document.querySelector(".screen");
-  let cvs = document.querySelector("#drawingCanvas")
+  let cvs = document.querySelector("#editor")
   screen.style.maxHeight = "100svh"
   operationDisplay.style.height = `${(100 - (25 / 2))}svh`
   cvs.style.display = "block"
