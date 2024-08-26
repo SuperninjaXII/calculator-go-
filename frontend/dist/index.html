@@ -7,15 +7,17 @@
 
     <title>calculator-go</title>
     
-  <script type="module" crossorigin src="/assets/index.1b9173e5.js"></script>
-  <link rel="stylesheet" href="/assets/index.22c94ff8.css">
+    
+  <script type="module" crossorigin src="/assets/index.5f507646.js"></script>
+  <link rel="stylesheet" href="/assets/index.6f126561.css">
 </head>
 
 <body>
     <header>
         <div class="screen">
+            <button id="clear">clear</button>
+            <canvas id="drawingCanvas" width='350' height="600"></canvas>
             <div class="operation-display">
-
             </div>
             <div class="results"></div>
         </div>
@@ -65,7 +67,7 @@
                 <button value="." class="number">
                     .
                 </button>
-                <button class="number">
+                <button id="super" class="number">
                     s
                 </button>
             </div>
@@ -79,6 +81,12 @@
             <button class="equal">=</button>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+    <script src="src/js/handwriting/handwriting.js">
+
+    </script>
+    
     
 </body>
 

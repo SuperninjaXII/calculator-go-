@@ -1,6 +1,5 @@
 const canvas = document.getElementById('drawingCanvas');
 canvas.width = innerWidth;
-window.data;
 const ctx = canvas.getContext('2d');
 ctx.lineWidth = 4;
 ctx.lineCap = "round";
@@ -19,6 +18,23 @@ canvas.addEventListener('touchstart', startDrawingTouch);
 canvas.addEventListener('touchmove', drawTouch);
 canvas.addEventListener('touchend', stopDrawing);
 canvas.addEventListener('touchcancel', stopDrawing);
+
+function drawBackgroundLines(lineWidth, lineSpacing, color) {
+    const canvasHeight = canvas.height;
+
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lineWidth;
+
+    for (let y = lineWidth / 2; y < canvasHeight; y += lineSpacing + lineWidth) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+    }
+}
+
+// Call drawBackgroundLines before clearing the canvas if needed
+clearCanvas();
 
 function getMousePos(event) {
     const rect = canvas.getBoundingClientRect();
@@ -103,9 +119,10 @@ function recognizeHandwriting() {
         numOfReturn: 1  // Optionally limit the number of results
     };
 
-    handwriting.recognize(trace, handwritingOptions, function(results, error) {
+    // Replace 'handwriting.recognize' with your actual library's function
+    handwriting.recognize(trace, handwritingOptions, (results, error) => {
         if (error) {
-            throw error
+            console.error('Error recognizing handwriting:', error);
         } else {
             document.querySelector('.results').textContent = `${results.join(', ')}`;
             window.data = `${results[0]}`
@@ -116,8 +133,12 @@ function recognizeHandwriting() {
 // Clear the canvas and trace
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+    drawBackgroundLines(2, 40, "black"); // Draw background lines
     trace = []; // Reset the trace data
     document.querySelector('.results').textContent = ''; // Clear the result
 }
-document.querySelector("#clear").addEventListener("click", clearCanvas())
 
+// Initial call to clear the canvas and draw background lines
+clearCanvas();
+
+document.querySelector("#clear").addEventListener("click", clearCanvas);
