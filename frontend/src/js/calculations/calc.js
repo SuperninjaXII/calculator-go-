@@ -82,7 +82,7 @@ const performCalculation = () => {
       result = firstValue * secondValue;
       break;
     case '/':
-      result = secondValue !== 0 ? firstValue / secondValue : 'Error'; // Handle division by zero
+      result = secondValue !== 0 ? firstValue / secondValue : "can't divide by zero"; // Handle division by zero
       break;
     default:
       result = 'Error';
@@ -117,3 +117,13 @@ document.querySelector('.equal').addEventListener('click', performCalculation);
 
 // Event listener for the delete button
 document.querySelector('#delete').addEventListener('click', deleteCharacter);
+document.querySelector('#super').addEventListener('click', () => {
+  let keypad = document.querySelector("main");
+  keypad.classList.toggle("hide")
+  let screen = document.querySelector(".screen");
+  let cvs = document.querySelector("#drawingCanvas")
+  screen.style.maxHeight = "100svh"
+  operationDisplay.style.height = `${(100 - (25 / 2))}svh`
+  cvs.style.display = "block"
+  operationDisplay.style.display = "none"
+})

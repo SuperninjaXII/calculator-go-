@@ -25,15 +25,26 @@ header {
 }
 
 .screen {
-    width: 100svw;
-    height: 26svh;
+    --screen-width: 100svw;
+    --screen-height: 25svh;
+    width: var(--screen-width);
+    height: var(--square-height);
     background: var(--bg);
 }
 
 .screen div {
-    width: 99svw;
-    height: 15svh;
+
+    width: var(--screen-width);
+    height: calc(25svh/2);
     font-size: 2.1rem;
+}
+
+.operation-display {
+    flex-direction: column;
+}
+
+canvas {
+    display: none;
 }
 
 .results {
