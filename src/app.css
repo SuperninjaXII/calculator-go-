@@ -1,3 +1,10 @@
+@import url("./style.css");
+
+@font-face {
+    font-family: our;
+    src: url(./DMSerifText-Regular.ttf);
+}
+
 :root {
     --bg: #FFFFFF;
     --tertiary: #E6E8E6;
@@ -11,54 +18,73 @@ body {
     display: flex;
     flex-direction: column;
     background: var(--bg);
+    font-family: our;
 }
 
 header {
     display: flex;
     flex-direction: column;
-    max-height: 31svh;
 }
 
 .screen {
-    width: 99svw;
-    height: 27svh;
-    background: var(--tertiary);
+    --screen-width: 100svw;
+    --screen-height: 25svh;
+    width: var(--screen-width);
+    height: var(--square-height);
+    background: var(--bg);
 }
 
 .screen div {
-    width: 99svw;
-    height: 15svh;
+
+    width: var(--screen-width);
+    height: calc(25svh/2);
+    font-size: 2.1rem;
+}
+
+.operation-display {
+    flex-direction: column;
+}
+
+
+.results {
+    text-align: right;
 }
 
 main {
+    --keyboard-width: 100svw;
+    --keyboard-height: 70svh;
+    --square-width: 25svw;
+    --square-height: calc(var(--keyboard-height)/5);
     display: flex;
     flex-direction: row;
-    max-height: 69svh;
+    min-width: var(--keyboard-width);
+    max-height: var(--keyboard-height);
 }
 
 .utilities-number-container {
     display: flex;
     flex-direction: column;
-    width: 86svw;
+    width: calc(var(--keyboard-width)- var(--square-width));
 }
 
 .utilities {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 88svw;
-    height: 16svh;
+    width: calc(var(--keyboard-width) - var(--square-width));
+    height: var(--square-height);
 }
 
 .utilities button {
-    width: 28.7svw;
-    height: 16svh;
-    font-size: 2.9rem;
+    width: var(--square-width);
+    height: var(--square-height);
+    font-size: 2.4rem;
     color: var(--accent);
     border: none;
     margin: 0;
     background: var(--secodary);
 }
+
 
 .utilities #clear {
     color: var(--tertiary);
@@ -66,13 +92,13 @@ main {
 
 .numbers-container {
     display: flex;
-    width: 90svw;
+    width: calc(var(--keyboard-width) - var(--square-width));
     flex-wrap: wrap;
 }
 
 .numbers-container .number {
-    width: 29svw;
-    height: 14svh;
+    width: var(--square-width);
+    height: var(--square-height);
     background: var(--complementary);
     border: none;
     color: var(--secodary);
@@ -80,15 +106,56 @@ main {
 
 }
 
-.number:hover {
-    background: var(--tertiary);
-}
 
 .operators button {
     background: var(--secodary);
     color: var(--accent);
     border: none;
     font-size: 2.2rem;
-    width: 13svw;
-    height: 14.43svh;
+    width: var(--square-width);
+    height: var(--square-height);
 }
+
+
+.operators .equal {
+    background: var(--accent);
+    color: var(--tertiary);
+}
+
+.operators .equal:hover {
+    background: var(--bg);
+    color: var(--accent);
+}
+
+button {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+button:hover {
+    background: var(--complementary) radial-gradient(circle, transparent 1%, var(--accent) 1%) center/15000%;
+}
+
+button:active {
+    background-color: var(--tertiary);
+    background-size: 100%;
+    transition: background 0s;
+}
+
+/* Button style */
+.number {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+.number:hover {
+    background: var(--complementary) radial-gradient(circle, transparent 1%, var(--accent) 1%) center/15000%;
+}
+
+.number:active {
+    background-color: var(--tertiary);
+    background-size: 100%;
+    transition: background 0s;
+}
+
+/* Button style */
