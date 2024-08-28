@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.4",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +11,7 @@
     "vite": "^3.0.7"
   },
   "dependencies": {
-    "iink-ts": "^1.0.5"
+    "iink-ts": "^1.0.5",
+    "path": "^0.12.7"
   }
 }
