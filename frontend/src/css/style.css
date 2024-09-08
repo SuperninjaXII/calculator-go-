@@ -2,6 +2,10 @@
   display: none;
 }
 
+#editor {
+  background: #fff;
+}
+
 .dropbtn {
   border: none;
   background-color: ghostwhite;

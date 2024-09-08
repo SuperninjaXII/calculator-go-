@@ -1,4 +1,3 @@
-// Math.js Initialization
 
 // Selectors
 const resultScreen = document.querySelector('.results');
