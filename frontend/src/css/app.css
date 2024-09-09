@@ -90,7 +90,7 @@ main {
 .utilities-number-container {
     display: flex;
     flex-direction: column;
-    width: calc(var(--keyboard-width)- var(--square-width));
+    width: calc(var(--keyboard-width) - var(--square-width));
 }
 
 .utilities {
@@ -193,4 +193,38 @@ button:active {
     background: #FFDEDC;
 }
 
-/* Button style */
+.extra-keys {
+    display: none;
+}
+
+@media only screen and (min-width: 400px) {
+    main {
+        --keyboard-width: 55svw;
+        --keyboard-height: 60svh;
+        --square-width: calc(var(--keyboard-width) / 4);
+        --square-height: calc(var(--keyboard-height) / 5);
+        display: flex;
+        flex-direction: row;
+        min-width: var(--keyboard-width);
+        max-height: var(--keyboard-height);
+    }
+
+    .operators {
+        display: flex;
+        flex-direction: column
+    }
+
+    .extra-keys {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .extra-keys button {
+        width: calc(var(--keyboard-width)/4);
+        height: calc(var(--keyboard-height)/6);
+        border: none;
+        background: var(--bg);
+        color: var(--accent02);
+        font-size: 1.4rem;
+    }
+}

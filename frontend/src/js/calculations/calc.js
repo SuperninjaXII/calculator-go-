@@ -82,6 +82,9 @@ document.querySelector('.numbers-container').addEventListener('click', (event) =
   }
 });
 
+document.querySelector('.extra-keys').addEventListener('click', (event) => {
+  collectValue(event);
+});
 document.querySelectorAll('.operator').forEach(button => {
   button.addEventListener('click', collectValue);
 });

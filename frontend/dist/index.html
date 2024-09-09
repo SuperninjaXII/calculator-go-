@@ -6,8 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>calculator-go</title>
-    <link rel="stylesheet" href="src/css/app.css">
-    <link rel="stylesheet" href="src/css/style.css">
+    
+    
     <style>
         #editor {
             width: 100svw;
@@ -39,7 +39,9 @@
             color: #fff;
         }
     </style>
-    <script type="module" src="./node_modules/iink-ts/dist/iink.min.js" type="text/javascript" charset="utf-8"></script>
+    
+  <script type="module" crossorigin src="/assets/index.fd744540.js"></script>
+  <link rel="stylesheet" href="/assets/index.21688bb9.css">
 </head>
 
 <body>
@@ -55,7 +57,7 @@
 
     <nav class="hand-buttons hide">
         <div class="dropdown ">
-            <button id="secondSuper" class="dropbtn hide"><img src="src/imgs/calculator.png" alt="calculate"
+            <button id="secondSuper" class="dropbtn hide"><img src="/assets/calculator.7951b81d.png" alt="calculate"
                     class="icon" /></button>
             <div class="dropdown-content">
                 <a id="simpleSwitch">simple</a>
@@ -63,9 +65,9 @@
         </div>
         <li class="hand-button hide" id="convert">Calculate</li>
         <div class="drawing-helper-btns">
-            <li class="hand-button hide" id="clearCanvas"><img src="src/imgs/eraser.png" alt="clear" class="icon"></li>
-            <li class="hand-button hide" id="undo"><img src="src/imgs/undo.png" class="icon" alt="undo"></li>
-            <li class="hand-button hide" id="redo"><img src="src/imgs/redo.png" class="icon" alt="redo"></li>
+            <li class="hand-button hide" id="clearCanvas"><img src="/assets/eraser.330284ac.png" alt="clear" class="icon"></li>
+            <li class="hand-button hide" id="undo"><img src="/assets/undo.1da91abc.png" class="icon" alt="undo"></li>
+            <li class="hand-button hide" id="redo"><img src="/assets/redo.9cbc3e70.png" class="icon" alt="redo"></li>
 
         </div>
     </nav>
@@ -108,7 +110,7 @@
                 </button>
 
                 <button id="super" class="number">
-                    <img src="src/imgs/calculator.png" alt="calculator" class="icon">
+                    <img src="/assets/calculator.7951b81d.png" alt="calculator" class="icon">
                 </button>
                 <button value="0" class="number">
                     0
@@ -126,33 +128,10 @@
             <button value="/" class="operator">/</button>
             <button class="equal">=</button>
         </section>
-        <section class="extra-keys">
-            <button value="(">(</button>
-            <button value=")">)</button>
-            <button value="/100">%</button>
-            <button value="pi">π</button>
-            <button value="e">e</button>
-            <button value="sqrt(">√</button>
-            <button value="pow(">^</button>
-            <button value="log">log</button>
-            <button value="ln">ln</button>
-            <button value="sin(">sin</button>
-            <button value="cos(">cos</button>
-            <button value="tan(">tan</button>
-            <button value="abs(">abs</button>
-            <button value="exp(">exp</button>
-            <button value="floor(">floor</button>
-            <button value="ceil(">ceil</button>
-            <button value="round(">round</button>
-            <button value="min(">min</button>
-            <button value="max(">max</button>
-        </section>
     </main>
     <script src="./src/js/calculations/math.js"></script>
-    <script src="./src/js/calculations/calc.js" type="module"></script>
-    <script type="module" src="src/js/handwriting/handwritting.js">
-
-    </script>
+    
+    
 </body>
 
 </html>
