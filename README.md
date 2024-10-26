@@ -4,7 +4,8 @@ A Simple Calculator in Go
 Getting Started:
  * Clone the Repository:
    ```
-   git clone https://github.com/SuperninjaXII/calculator-go-```
+   git clone https://github.com/SuperninjaXII/calculator-go-
+   ```
 
  * Build the Calculator:
    ```
