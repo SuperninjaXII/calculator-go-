@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/maja42/goval"
 )
 
 // App struct
@@ -24,4 +25,9 @@ func (a *App) startup(ctx context.Context) {
 // Greet returns a greeting for the given name
 func (a *App) Greet(name string) string {
 	return fmt.Sprintf("Hello %s, It's show time!", name)
+}
+func (a *App) Calculator(expression string)string{
+  eval := goval.NewEvaluator()
+  result, _ := eval.Evaluate(expression,nil,nil) 
+  return fmt.Sprint(result)
 }
