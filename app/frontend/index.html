@@ -1,38 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale = 1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Calculator-Go</title>
 
-    <link href="src/index.css" rel="stylesheet">
-
+    <link href="src/index.css" rel="stylesheet" />
 </head>
 
 <body>
-
-  
-
     <section class="container">
-
-
         <div class="output">
-
-
+            <input type="text" id="display-1" />
+            <input type="text" id="display-2" />
         </div>
 
         <div class="keyboard">
-
-            <button id="CE" >CE</button>
+            <button id="CE">CE</button>
 
             <button id="clear">C</button>
 
             <button id="divide">/</button>
             <button id="mod">%</button>
-            
+
             <button id="one">1</button>
 
             <button id="two">2</button>
@@ -56,7 +48,7 @@
             <button id="nine">9</button>
 
             <button id="multiply">*</button>
-         
+
             <button disabled class="noHover"></button>
 
             <button id="zero">0</button>
@@ -64,13 +56,10 @@
             <button id="power">^</button>
 
             <button id="equal">=</button>
-
         </div>
     </section>
 
-    <script type="module" src="./src/index.js">
-    </script>
-
+    <script type="module" src="./src/index.js"></script>
 </body>
 
 </html>
