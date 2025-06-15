@@ -1,6 +1,6 @@
-# Calculator with Go in the Back-end
+# desktop.abd mobile calculator
 
-## Simple Web-Based Calculator Powered by Go
+## Calculator application
 
 This project features a sleek, responsive calculator with its core logic handled by a robust Go backend. It provides basic arithmetic operations through an intuitive web interface.
 
@@ -28,7 +28,6 @@ This project features a sleek, responsive calculator with its core logic handled
     * HTML5
     * CSS3 (with responsive design principles)
     * JavaScript
-    * Bootstrap 4.3.1 (for basic styling and responsiveness)
 * **Backend:**
     * Go (Golang)
     * [`net/http` package](https://pkg.go.dev/net/http) (for web server functionality)
@@ -47,8 +46,7 @@ Before you begin, ensure you have the following installed:
 
 * **Go:** [Download and install Go](https://golang.org/doc/install) (version 1.16 or higher recommended).
 * **Git:** [Download and install Git](https://git-scm.com/downloads).
-* A modern web browser (Chrome, Firefox, Edge, Safari, etc.).
-
+* **wails** install wails 
 #### Installation Steps
 
 1.  **Clone the repository:**
@@ -58,19 +56,19 @@ Before you begin, ensure you have the following installed:
     ```
 2.  **Navigate to the project directory:**
     ```bash
-    cd calculator-go-
+    cd calculator-go-/app
     ```
 3.  **Run the Go Backend:**
-    From within the `calculator-go-` directory, execute the Go application. This will start the web server.
+    From within the `app` directory and build.
     ```bash
-    go run main.go
+    wails build
     ```
     *The server typically runs on `http://localhost:8080` by default. You can check your terminal output for the exact address and port.*
 
 4.  **Access the Frontend:**
-    Open your web browser and navigate to the address where the Go server is running.
-    ```
-    http://localhost:8080
+    for development run
+    ```bash
+    wails dev
     ```
     You should now see the calculator interface.
 
