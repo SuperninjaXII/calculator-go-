@@ -47,24 +47,33 @@ h1 {
     width: var(--app-width);
     background: white;
 
-    & .output {
-        width: var(--app-width);
-        height: 30vh;
-        background: gray;
-        text-align: center;
+& .output {
+    width:var(--app-width);
+    height:30vh;
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+}
 
-        & input {
-            width: var(--app-width);
-            height: 15vh;
-            border: none;
-            outline: none;
-            font-size: 3rem;
-        }
+#display-top {
+    color: lightgrey;
+    font-size: 1.2rem;
+    min-height: 1.5rem;
+    text-align: right;
 
-        & #display-1 {}
+}
 
-        & #display-2 {}
-    }
+#display-bottom {
+    color: white;
+    font-size: 2.5rem;
+    text-align: right;
+    word-wrap: break-word
+
+}
+
+
 
     & .keyboard {
         display: flex;
