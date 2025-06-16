@@ -43,5 +43,5 @@ if(expression.trim() != ""){
 });
 
 equal.addEventListener("click", DisplayAnswer)
-//setup event listeners
+//setup event listeners//
 getButtonValues()
