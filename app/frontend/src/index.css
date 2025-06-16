@@ -1,10 +1,15 @@
 /* Reset and base styles */
-*, :root, body {
+@import url("./base.css");
+
+*,
+:root,
+body {
     padding: 0;
     margin: 0;
     overflow: hidden;
 }
 
+/*for us to have a proper thememing option we need variables so variables are import and make editing values easier than random abitray value from thin air*/
 body {
     font-family: sans-serif;
     background: #f5f5f5;
@@ -19,10 +24,10 @@ body {
     background: white;
 }
 
-
 .output {
     height: 30vh;
-    background: #2a2a2a; /* Dark gray background */
+    background: #2a2a2a;
+    /* Dark gray background */
     padding: 15px 20px;
     display: flex;
     flex-direction: column;
@@ -34,23 +39,40 @@ body {
 
 #display-history {
     font-size: 1.2rem;
-    color: #aaa; /* Light gray for history */
-    min-height: 1.5rem;
-    margin-bottom: 5px;
-    width: 100%;
+    color: #aaa;
+    height: 0;
+    /* Light gray for history */
     text-align: right;
     word-break: break-all;
 }
 
 #display-current {
-    font-size: 2.5rem;
     font-weight: 300;
-    min-height: 3rem;
-    width: 100%;
+    /*vw stands for view port width these ios not relate to other elements like percentage
+* so dont use %%%% percentages*/
+    width: 100vw;
+    height: 30vh;
     text-align: right;
     word-break: break-all;
-}
 
+    & #input-display {
+        width: var(--APP-WIDTH);
+        height: 15vh;
+        font-size: 2.5rem;
+        background: inherit;
+        color: white;
+        border: none;
+        outline: none;
+    }
+
+    & #display-answer {
+        width: var(--APP-WIDTH);
+        height: 15vh;
+        background: inherit;
+        color: white;
+        font-size: 2.5rem;
+    }
+}
 
 .keyboard {
     display: grid;
@@ -71,13 +93,31 @@ button {
     cursor: pointer;
 }
 
+button:nth-child(1),
+button:nth-child(2),
+button:nth-child(3) {
+    background: lightgrey;
+}
 
-button:nth-child(1), button:nth-child(2), button:nth-child(3) { background: lightgrey; }
-button:nth-child(4) { background: lightgreen; }
-button:nth-child(8) { background: aqua; }
-button:nth-child(12) { background: pink; }
-button:nth-child(16) { background: orange; }
-button:nth-child(20) { background: yellow; }
+button:nth-child(4) {
+    background: lightgreen;
+}
+
+button:nth-child(8) {
+    background: aqua;
+}
+
+button:nth-child(12) {
+    background: pink;
+}
+
+button:nth-child(16) {
+    background: orange;
+}
+
+button:nth-child(20) {
+    background: yellow;
+}
 
 /* Spacer button */
 .noHover {

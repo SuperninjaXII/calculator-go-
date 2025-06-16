@@ -1,14 +1,17 @@
 import { Calculator } from "../wailsjs/go/main/App.js";
 
 const equal = document.querySelector("#equal");
-const inputValues = document.querySelector("#display-top");
-const Display = document.querySelector("#display-bottom");
+const inputValues = document.querySelector("#input-display");
+const Display = document.querySelector("#display-answer");
 //this function requiers and ecpressions as sn arguement and itut the result in the localstorage
 const Calculate = function (expression) {
   const result = Calculator(expression);
   result.then((result) => {
     localStorage.setItem("result", `${result}`);
   });
+};
+const updateInputToDisplay = () => {
+  inputValues.value = getValues();
 };
 //this is a helper function to get values from input
 const getValues = () => {
@@ -19,29 +22,29 @@ const setValues = () => {
 };
 
 const getButtonValues = () => {
-  const buttons = document.querySelectorAll(`.numbers`);
+  const buttons = document.querySelectorAll(`button`);
   setValues();
 
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const newValue = event.target.value;
       const current = getValues();
-      let updated = current + newValue;
+      const updated = current + newValue;
       localStorage.setItem("input", `${updated}`);
+      updateInputToDisplay();
     });
   });
 };
 //this displays to the output
-const DisplayAnswer = () => {
+equal.addEventListener("click", () => {
+  setValues();
   let expression = getValues();
 
+  console.log(expression);
   if (expression.trim() != "") {
     Calculate(`${expression}`);
-    localStorage.removeItem("input");
-    Display.innerHTML = answer;
+    Display.innerHTML = localStorage.getItem("result");
   }
-};
-
-equal.addEventListener("click", DisplayAnswer);
+});
 //setup event listeners//
 getButtonValues();
