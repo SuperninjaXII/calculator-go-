@@ -1,48 +1,52 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calculator-Go</title>
-    <link href="src/index.css" rel="stylesheet">
-</head>
-<body>
-    <section class="container">
-        
-        <div class="output">
-            <div id="display-history"></div>
-            <div id="display-current">0</div>
-        </div>
+<doctype html>
+    <html lang="en">
 
-        
-        <div class="keyboard">
-            <button id="CE">CE</button>
-            <button id="clear">C</button>
-            <button id="divide">/</button>
-            <button id="mod">%</button>
-            
-            <button id="seven">7</button>
-            <button id="eight">8</button>
-            <button id="nine">9</button>
-            <button id="multiply">*</button>
-            
-            <button id="four">4</button>
-            <button id="five">5</button>
-            <button id="six">6</button>
-            <button id="minus">-</button>
-            
-            <button id="one">1</button>
-            <button id="two">2</button>
-            <button id="three">3</button>
-            <button id="add">+</button>
-            
-            <button disabled class="noHover"></button>
-            <button id="zero">0</button>
-            <button id="power">^</button>
-            <button id="equal">=</button>
-        </div>
-    </section>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Calculator-Go</title>
+        <link href="src/index.css" rel="stylesheet" />
+    </head>
 
-    <script type="module" src="./src/index.js"></script>
-</body>
-</html>
+    <body>
+        <section class="container">
+            <div class="output">
+                <div id="display-history"></div>
+                <div id="display-current">0</div>
+                <input id="display-top" type="text" />
+                <div id="display-bottom"></div>
+            </div>
+
+            <div class="keyboard">
+                <button id="CE">CE</button>
+                <button id="clear">C</button>
+                <button id="divide">/</button>
+                <button id="mod">%</button>
+
+                <button id="seven">7</button>
+                <button id="eight">8</button>
+                <button id="nine">9</button>
+                <button id="multiply">*</button>
+
+                <button id="four">4</button>
+                <button id="five">5</button>
+                <button id="six">6</button>
+                <button id="minus">-</button>
+
+                <button id="one">1</button>
+                <button id="two">2</button>
+                <button id="three">3</button>
+                <button id="add">+</button>
+
+                <button disabled class="noHover"></button>
+                <button id="zero">0</button>
+                <button id="power">^</button>
+                <button id="equal">=</button>
+            </div>
+        </section>
+
+        <script type="module" src="./src/index.js"></script>
+    </body>
+
+    </html>
+</doctype>

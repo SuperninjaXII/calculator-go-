@@ -1,5 +1,7 @@
 /* Reset and base styles */
-*, :root, body {
+*,
+:root,
+body {
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -19,22 +21,10 @@ body {
     background: white;
 }
 
-
-.output {
-    height: 30vh;
-    background: #2a2a2a; /* Dark gray background */
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    color: white;
-    border-bottom: 1px solid #444;
-}
-
 #display-history {
     font-size: 1.2rem;
-    color: #aaa; /* Light gray for history */
+    color: #aaa;
+    /* Light gray for history */
     min-height: 1.5rem;
     margin-bottom: 5px;
     width: 100%;
@@ -51,6 +41,12 @@ body {
     word-break: break-all;
 }
 
+#display-top {
+    color: lightgrey;
+    font-size: 1.2rem;
+    min-height: 1.5rem;
+    text-align: right;
+}
 
 .keyboard {
     display: grid;
@@ -58,6 +54,62 @@ body {
     grid-template-rows: repeat(5, 1fr);
     height: 70vh;
     gap: 0;
+
+    /* it Removes Outline of all Button */
+    & *:focus {
+        outline: 0 !important;
+    }
+
+    & button {
+        font-size: 22px;
+        color: "black";
+        border: none;
+        outline: none;
+        margin: auto;
+        border-radius: 1.2rem;
+        width: calc(var(--app-width) / 4.1);
+        height: calc(70vh / 5.1);
+        line-height: normal;
+    }
+
+    & button:nth-child(1) {
+        background: lightgrey;
+    }
+
+    & button:nth-child(2) {
+        background: lightgrey;
+    }
+
+    & button:nth-child(3) {
+        background: lightgrey;
+    }
+
+    & button:nth-child(4) {
+        background: lightgreen;
+    }
+
+    & button:nth-child(8) {
+        background: aqua;
+    }
+
+    & button:nth-child(12) {
+        padding: 0px;
+
+        font-family: monospace;
+        background: orange;
+    }
+
+    & button:nth-child(16) {
+        background: pink;
+    }
+
+    & button:nth-child(20) {
+        background: yellow;
+    }
+
+    & sbutton:hover {
+        background: rgb(247 230 236);
+    }
 }
 
 button {
@@ -71,13 +123,31 @@ button {
     cursor: pointer;
 }
 
+button:nth-child(1),
+button:nth-child(2),
+button:nth-child(3) {
+    background: lightgrey;
+}
 
-button:nth-child(1), button:nth-child(2), button:nth-child(3) { background: lightgrey; }
-button:nth-child(4) { background: lightgreen; }
-button:nth-child(8) { background: aqua; }
-button:nth-child(12) { background: pink; }
-button:nth-child(16) { background: orange; }
-button:nth-child(20) { background: yellow; }
+button:nth-child(4) {
+    background: lightgreen;
+}
+
+button:nth-child(8) {
+    background: aqua;
+}
+
+button:nth-child(12) {
+    background: pink;
+}
+
+button:nth-child(16) {
+    background: orange;
+}
+
+button:nth-child(20) {
+    background: yellow;
+}
 
 /* Spacer button */
 .noHover {
