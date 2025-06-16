@@ -1,9 +1,10 @@
 import { Calculator } from "../wailsjs/go/main/App.js";
-
+import { $ } from "./util.js";
 const equal = document.querySelector("#equal");
 const inputValues = document.querySelector("#input-display");
 const Display = document.querySelector("#display-answer");
 //this function requiers and ecpressions as sn arguement and itut the result in the localstorage
+
 const Calculate = function (expression) {
   const result = Calculator(expression);
   result.then((result) => {
@@ -12,6 +13,10 @@ const Calculate = function (expression) {
 };
 const updateInputToDisplay = () => {
   inputValues.value = getValues();
+};
+const clearInput = () => {
+  localStorage.removeItem("input");
+  updateInputToDisplay();
 };
 //this is a helper function to get values from input
 const getValues = () => {
@@ -38,7 +43,7 @@ const getButtonValues = () => {
 //this displays to the output
 equal.addEventListener("click", () => {
   setValues();
-  let expression = getValues();
+  const expression = getValues();
 
   console.log(expression);
   if (expression.trim() != "") {
@@ -48,3 +53,4 @@ equal.addEventListener("click", () => {
 });
 //setup event listeners//
 getButtonValues();
+$("#CE").addEventListener("click", clearInput);
