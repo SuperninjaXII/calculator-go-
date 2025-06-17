@@ -1,28 +1,35 @@
 import { Calculator } from "../wailsjs/go/main/App.js";
 import { $, getValues, setValues } from "./util.js";
+
 const equal = document.querySelector("#equal");
 const inputValues = document.querySelector("#input-display");
 const Display = document.querySelector("#display-answer");
-//this function requiers and ecpressions as sn arguement and itut the result in the localstorage
 
+// Calculate expression and update display
 const Calculate = function (expression) {
   const result = Calculator(expression);
   result.then((result) => {
+    Display.innerHTML = result;
     localStorage.setItem("result", `${result}`);
+  }).catch((err) => {
+    Display.innerHTML = "Error";
+    console.error(err);
   });
 };
+
 const updateInputToDisplay = () => {
   inputValues.value = getValues();
 };
+
 export const clearInput = () => {
   localStorage.setItem("input", "");
   localStorage.setItem("result", "");
   updateInputToDisplay();
-  Display.innerHTML = localStorage.getItem("result");
+  Display.innerHTML = "";
 };
+
 const getButtonValues = () => {
   const buttons = document.querySelectorAll(`button`);
-  
 
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
@@ -30,26 +37,25 @@ const getButtonValues = () => {
 
       const current = getValues();
       const updated = current + newValue;
-      localStorage.setItem("input", `${updated}`);
-      console.log("click");
-      console.log(getValues());
+      localStorage.setItem("input", updated);
       updateInputToDisplay();
     });
-    updateInputToDisplay();
   });
 };
-//this displays to the output
+
+// Equal button click event
 equal.addEventListener("click", () => {
-  setValues(`${inputValues.value}`);
+  setValues(inputValues.value);
   const expression = getValues();
 
-  console.log(expression);
   if (expression.trim() !== "") {
-    Calculate(`${expression}`);
-    Display.innerHTML = localStorage.getItem("result");
+    Calculate(expression);
   }
 });
-//setup event listeners//
 
+// Setup event listeners
 $("#CE").addEventListener("click", clearInput);
 getButtonValues();
+
+updateInputToDisplay();
+Display.innerHTML = localStorage.getItem("result") || "";
