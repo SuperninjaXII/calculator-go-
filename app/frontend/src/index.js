@@ -1,5 +1,5 @@
 import { Calculator } from "../wailsjs/go/main/App.js";
-import { $ } from "./util.js";
+import { $, getValues, setValues } from "./util.js";
 const equal = document.querySelector("#equal");
 const inputValues = document.querySelector("#input-display");
 const Display = document.querySelector("#display-answer");
@@ -14,43 +14,42 @@ const Calculate = function (expression) {
 const updateInputToDisplay = () => {
   inputValues.value = getValues();
 };
-const clearInput = () => {
-  localStorage.removeItem("input");
+export const clearInput = () => {
+  localStorage.setItem("input", "");
+  localStorage.setItem("result", "");
   updateInputToDisplay();
+  Display.innerHTML = localStorage.getItem("result");
 };
-//this is a helper function to get values from input
-const getValues = () => {
-  return localStorage.getItem("input") || "";
-};
-const setValues = () => {
-  localStorage.setItem("input", `${inputValues.value}`);
-};
-
 const getButtonValues = () => {
   const buttons = document.querySelectorAll(`button`);
-  setValues();
+  
 
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const newValue = event.target.value;
+
       const current = getValues();
       const updated = current + newValue;
       localStorage.setItem("input", `${updated}`);
+      console.log("click");
+      console.log(getValues());
       updateInputToDisplay();
     });
+    updateInputToDisplay();
   });
 };
 //this displays to the output
 equal.addEventListener("click", () => {
-  setValues();
+  setValues(`${inputValues.value}`);
   const expression = getValues();
 
   console.log(expression);
-  if (expression.trim() != "") {
+  if (expression.trim() !== "") {
     Calculate(`${expression}`);
     Display.innerHTML = localStorage.getItem("result");
   }
 });
 //setup event listeners//
-getButtonValues();
+
 $("#CE").addEventListener("click", clearInput);
+getButtonValues();
