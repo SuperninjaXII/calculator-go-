@@ -4,7 +4,7 @@ go 1.23
 
 require (
 	github.com/maja42/goval v1.6.0
-	github.com/wailsapp/wails/v2 v2.9.2
+	github.com/wailsapp/wails/v2 v2.10.1
 )
 
 require (

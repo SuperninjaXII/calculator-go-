@@ -15,6 +15,22 @@ body {
     background: #f5f5f5;
 }
 
+.katex-mathml {
+    display: none !important;
+}
+
+.katex-html {
+    display: block !important;
+}
+
+.katex {
+    color: black !important;
+}
+
+.katex svg path {
+    fill: black !important;
+}
+
 /* Container */
 .container {
     display: flex;
@@ -59,10 +75,11 @@ body {
         width: var(--APP-WIDTH);
         height: 15vh;
         font-size: 2.5rem;
-        background: inherit;
-        color: white;
-        border: none;
+        background: yellow !important;
+
         outline: none;
+        overflow: visible !important;
+        border: 2px solid red !important;
     }
 
     & #display-answer {

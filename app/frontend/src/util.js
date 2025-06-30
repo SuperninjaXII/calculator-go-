@@ -5,6 +5,9 @@ export const $ = (elem) => {
 export const getValues = () => {
   return localStorage.getItem("input") || "";
 };
+export const getLatexValues = () => {
+  return localStorage.getItem("latex") || "";
+};
 export const setValues = (data) => {
   localStorage.setItem("input", data);
 };
